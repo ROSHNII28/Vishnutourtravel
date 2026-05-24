@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --green: #1E3D2F;
+    --blue: #2E86C1;
+    --sand: #F4E8D8;
+    --white: #FFFFFF;
+    --gold: #D4AF37;
+    --green-light: #2a5240;
+    --text-dark: #1a2a20;
+    --text-mid: #3a5a40;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--sand);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply text-xs tracking-widest uppercase text-gold font-bold mb-2 block;
+  }
+  .section-title {
+    @apply font-playfair text-3xl md:text-4xl text-green mb-4 leading-tight;
+  }
+  .section-divider {
+    @apply w-12 h-1 bg-gold mb-8 block;
+  }
+  .btn-primary {
+    @apply bg-blue text-white px-9 py-3.5 rounded font-bold text-base tracking-wide
+    transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-dark
+    shadow-[0_4px_20px_rgba(46,134,193,0.4)] hover:shadow-[0_8px_28px_rgba(46,134,193,0.5)]
+    inline-block no-underline cursor-pointer border-0;
+  }
+  .btn-sm {
+    @apply bg-green text-white px-4 py-2 rounded text-xs font-bold
+    transition-all duration-200 hover:bg-gold hover:text-green
+    no-underline inline-block cursor-pointer;
+  }
+  .pkg-card {
+    @apply bg-white rounded-lg overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.08)]
+    transition-all duration-300 cursor-pointer hover:-translate-y-1.5
+    hover:shadow-[0_12px_36px_rgba(0,0,0,0.15)];
+  }
+}
+
+/* Mountain SVG wave */
+.hero-wave::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 180px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 180'%3E%3Cpath fill='%23F4E8D8' d='M0,180 L0,110 L120,60 L240,100 L360,40 L480,90 L600,30 L720,80 L840,20 L960,70 L1080,35 L1200,75 L1320,45 L1440,80 L1440,180Z'/%3E%3C/svg%3E") bottom/cover no-repeat;
+}
+
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-animate { animation: heroFade 1.2s ease both; }
+
+/* Testimonial quote mark */
+.testi-card::before {
+  content: '\201C';
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: var(--gold);
+  opacity: 0.3;
+  position: absolute;
+  top: -10px; left: 16px;
+  line-height: 1;
+}
+
+/* WhatsApp float */
+.wa-float {
+  @apply fixed bottom-7 right-7 w-14 h-14 rounded-full flex items-center justify-center
+  text-white text-2xl z-50 no-underline
+  transition-transform duration-200 hover:scale-110;
+  background: #25D366;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+}
