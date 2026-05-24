@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import logoImg from '../assets/vishnu logo.png';
 
 const navItems = [
   { label: 'Home', to: '/' },
@@ -21,15 +22,31 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'shadow-2xl' : ''}`}
-      style={{ background: 'var(--green)', height: '68px' }}>
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'shadow-2xl' : ''}`}
+      style={{ background: 'var(--green)', height: '100px' }}
+    >
       <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="no-underline">
-          <div style={{ fontFamily: "'Playfair Display', serif", color: 'var(--gold)', fontSize: '1.45rem', letterSpacing: '0.5px', lineHeight: 1.2 }}>
-            Vishnu Tour & Travel
-            <span style={{ color: '#fff', fontStyle: 'italic', fontSize: '0.8rem', display: 'block', letterSpacing: '1px', opacity: 0.85 }}>
-              Uttarakhand's Trusted Companion
+
+        {/* Logo Container */}
+        <Link to="/" className="no-underline flex items-center gap-3 h-full py-1">
+          <img
+            src={logoImg}
+            alt="Vishnu Tour & Travel Logo"
+            style={{ height: '90px', width: 'auto', objectFit: 'contain' }}
+          />
+
+          {/* Optional tagline next to logo */}
+          <div className="hidden sm:block border-l border-white/20 pl-3">
+            <span style={{
+              color: '#fff',
+              fontStyle: 'italic',
+              fontSize: '0.75rem',
+              display: 'block',
+              letterSpacing: '0.5px',
+              opacity: 0.85,
+              fontFamily: "'Playfair Display', serif"
+            }}>
             </span>
           </div>
         </Link>
@@ -69,8 +86,10 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full py-4 px-6 flex flex-col gap-4"
-          style={{ background: 'var(--green-light)' }}>
+        <div
+          className="md:hidden absolute top-full left-0 w-full py-4 px-6 flex flex-col gap-4"
+          style={{ background: 'var(--green-light)' }}
+        >
           {navItems.map(item => (
             <NavLink
               key={item.to}
@@ -84,7 +103,11 @@ export default function Navbar() {
               {item.label}
             </NavLink>
           ))}
-          <Link to="/booking" className="btn-primary text-center !py-2" onClick={() => setMenuOpen(false)}>
+          <Link
+            to="/booking"
+            className="btn-primary text-center !py-2"
+            onClick={() => setMenuOpen(false)}
+          >
             Book Now
           </Link>
         </div>

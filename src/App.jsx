@@ -8,8 +8,8 @@ import Contact from './pages/Contact'
 import Home from './pages/Home'
 import PackageDetail from './pages/PackageDetail'
 import Packages from './pages/Packages'
+import Services from './pages/Services'; // ✅ Sahi naam
 import WhyUs from './pages/WhyUs'
-import Testimonials from './pages/services'
 
 export default function App() {
   return (
@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/packages" element={<Packages />} />
         <Route path="/packages/:id" element={<PackageDetail />} />
         <Route path="/why-us" element={<WhyUs />} />
-        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/services" element={<Services />} />  {/* ✅ Sahi path */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/booking" element={<Booking />} />
       </Routes>
