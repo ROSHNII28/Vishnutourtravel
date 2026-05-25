@@ -20,11 +20,7 @@ export default function About() {
               className="w-full h-[420px] object-cover rounded"
               style={{ boxShadow: '12px 12px 0 var(--gold)' }}
             />
-            <div className="absolute -bottom-5 -right-5 rounded p-5 text-center text-white"
-              style={{ background: 'var(--green)', fontFamily: "'Playfair Display', serif" }}>
-              <span className="block text-4xl font-bold" style={{ color: 'var(--gold)' }}>12+</span>
-              <span className="text-sm">Years of<br />Experience</span>
-            </div>
+            
           </div>
           <div>
             <p className="section-label">Our Story</p>
