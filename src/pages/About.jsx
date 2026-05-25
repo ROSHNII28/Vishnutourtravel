@@ -7,7 +7,7 @@ export default function About() {
       <PageHero
         title="About Vishnu Tour & Travel"
         subtitle="Locally rooted, traveler-first. Serving pilgrims and adventurers since 2012."
-        image="https://images.unsplash.com/photo-1589308078055-a1c8e4e3be1e?w=1200&q=80"
+        image="https://www.tourmyindia.com/states/uttarakhand/"
       />
 
       {/* Story */}
