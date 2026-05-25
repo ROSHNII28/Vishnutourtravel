@@ -7,7 +7,7 @@ export default function About() {
       <PageHero
         title="About Vishnu Tour & Travel"
         subtitle="Locally rooted, traveler-first. Serving pilgrims and adventurers since 2012."
-        image="https://www.tourmyindia.com/states/uttarakhand/"
+        image="https://www.ayodhyacarhire.com/wp-content/uploads/2024/05/Rishikesh-Uttarakhand-India.jpg"
       />
 
       {/* Story */}
@@ -15,7 +15,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1589308078055-a1c8e4e3be1e?w=700&q=80"
+              src="https://www.tourmyindia.com/states/uttarakhand/image/uttarakhand-banner.webp"
               alt="Uttarakhand"
               className="w-full h-[420px] object-cover rounded"
               style={{ boxShadow: '12px 12px 0 var(--gold)' }}
